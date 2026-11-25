@@ -63,7 +63,7 @@ HTML5, CSS3, JavaScript, Git, GitHub Pages
 
 ##12. Estrutura
 - index.html
-- css/style.css
+- css/style.css.
 - js/script.js
 - img/
 

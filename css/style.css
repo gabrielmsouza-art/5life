@@ -1,14 +1,10 @@
 /* ===== CORES E FONTES DA MARCA (identidade visual) ===== */
 :root {
-  --roxo: #4a1d5e;
-  --roxo-claro: #efe6f3;
-  --verde: #2e7d32;
-  --creme: #f7f3ea;
-  --texto: #222222;
-  --erro: #b3261e;
+  --laranja: #f57c00; 
+  --branco: #ffffff;
+  --preto: #000000;
   --fonte: Arial, Helvetica, sans-serif;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -22,13 +18,15 @@ body {
   background: var(--creme);
 }
 
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+
 /* ===== CABEÇALHO E MENU ===== */
-.cabecalho {
+.cabecalho{
   position: sticky;
   top: 0;
   z-index: 10;
@@ -37,15 +35,15 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
-  background: var(--roxo);
-}
+  padding: 12px 16px;
+  background: var(--preto);
+  border-bottom: 4px solid var(--laranja);}
 
 .marca {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: var(--branco);
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
@@ -61,55 +59,62 @@ img {
 }
 
 .menu a {
-  color: #ffffff;
+  color: var(--branco);
   text-decoration: none;
   padding: 6px 0;
   display: inline-block;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
 .menu a:hover,
 .menu a:focus {
-  text-decoration: underline;
+  color: var(--laranja);
+  text-decoration: none;
 }
 
 /* ===== SEÇÃO INÍCIO ===== */
 .inicio {
-  padding: 48px 16px;
+  padding: 56px 16px;
   text-align: center;
-  background: var(--roxo-claro);
-}
+  background: var(--roxo); 
+  color: var(--roxo); }
 
 .inicio h1 {
-  margin: 0 0 12px;
-  font-size: 28px;
-  color: var(--roxo);
+  margin: 0 0 16px;
+  font-size: 32px;
+  color: var(--preto);
 }
 
 /* ===== BOTÃO (usado no Início e no formulário) ===== */
 .botao {
   display: inline-block;
   min-height: 44px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: none;
   border-radius: 8px;
-  background: var(--verde);
-  color: #ffffff;
+  background: var(--laranja); 
+  color: var(--branco);
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s, transform 0.1s;
 }
 
 .botao:hover {
-  background: #1f5e23;
+  background: var(--verde);
+  transform: translateY(-2px);
 }
+
 
 /* foco visível para quem navega pelo teclado (acessibilidade) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #f2c94c;
+  outline: 3px solid var(--laranja);
   outline-offset: 2px;
 }
 
@@ -123,7 +128,9 @@ textarea:focus-visible {
 .secao h2 {
   margin-top: 0;
   font-size: 24px;
-  color: var(--roxo);
+  color: var(--preto); 
+  border-left: 5px solid var(--laranja); 
+  padding-left: 12px;
 }
 
 /* ===== CATÁLOGO ===== */
@@ -139,28 +146,43 @@ textarea:focus-visible {
   padding: 8px 16px;
   border: 2px solid var(--roxo);
   border-radius: 20px;
-  background: #ffffff;
+  background: var(--branco);
   color: var(--roxo);
   font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filtro:hover {
+  border-color: var(--laranja);
+  color: var(--laranja);
 }
 
 .filtro.ativo {
-  background: var(--roxo);
-  color: #ffffff;
+  background: var(--laranja); 
+  border-color: var(--laranja);
+  color: var(--branco);
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
 .card {
-  background: #ffffff;
+  background: var(--branco);
   border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  padding: 14px;
+  border-top: 4px solid var(--roxo); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  border-top-color: var(--laranja); 
+  transform: translateY(-3px);
 }
 
 .card img {
@@ -172,6 +194,7 @@ textarea:focus-visible {
 .card h3 {
   margin: 10px 0 4px;
   font-size: 17px;
+  color: var(--preto);
 }
 
 .card p {
@@ -211,19 +234,32 @@ address {
   flex-direction: column;
   gap: 6px;
   max-width: 520px;
+  background: var(--branco); 
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .formulario label {
   font-weight: bold;
   margin-top: 8px;
+  color: var(--preto);
 }
 
 .formulario input,
 .formulario textarea {
   font: inherit;
   padding: 10px;
-  border: 2px solid #8a8a8a;
+  border: 2px solid #cccccc;
   border-radius: 8px;
+  background: var(--branco);
+  color: var(--preto);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: var(--laranja); 
+  outline: none;
 }
 
 .formulario .campo-erro {
@@ -247,12 +283,14 @@ address {
 
 /* ===== RODAPÉ ===== */
 .rodape {
-  padding: 20px 16px;
+  padding: 24px 16px;
   text-align: center;
-  background: var(--roxo);
-  color: #ffffff;
+  background: var(--preto); 
+  color: var(--branco);
+  border-top: 4px solid var(--laranja);
   font-size: 14px;
 }
+
 
 /* ===== TELAS MAIORES (tablet e computador) ===== */
 @media (min-width: 768px) {
